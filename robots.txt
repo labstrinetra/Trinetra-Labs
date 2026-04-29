@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Block system files
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /vercel/
+Disallow: /private/
+Disallow: /api/
+
+# Allow assets for SEO preview
+Allow: /assets/
+
+Sitemap: https://trinetra-labs.vercel.app/sitemap.xml
