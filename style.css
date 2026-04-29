@@ -650,3 +650,23 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
+
+/*Instagram Svg*/
+.instagram-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0px;
+  padding: 10px 18px;
+  background: #000000;
+  color: white;
+  border-radius: 8px;
+  margin-top: -1rem;
+}
+
+.instagram-link:hover {
+  background: #000000;
+}
+
+.instagram-link svg {
+  display: block;
+}
