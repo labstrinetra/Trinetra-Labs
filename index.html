@@ -21,11 +21,10 @@
 <link rel="canonical" href="https://trinetra-labs.vercel.app/">
 
 <!-- Favicon -->
-<link rel="shortcut icon" href="/assets/logo.jpg">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.jpg">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/logo.jpg">
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/logo.jpg">
-
+<link rel="shortcut icon" href="/assets/logo.webp" type="image/webp">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.webp">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/logo.webp">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/logo.webp">
 <!-- Theme color for mobile browsers -->
 <meta name="theme-color" content="#0f172a">
 <meta name="color-scheme" content="#0f172a">
@@ -39,7 +38,7 @@
 <meta property="og:title" content="Trinetra Labs | AI Solutions & Web Development">
 <meta property="og:description" content="Transform your business with AI solutions, web development, UI/UX design, and automation from Trinetra Labs.">
 <meta property="og:url" content="https://trinetra-labs.vercel.app/">
-<meta property="og:image" content="https://trinetra-labs.vercel.app/assets/logo.jpg">
+<meta property="og:image" content="https://trinetra-labs.vercel.app/assets/logo.webp">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Trinetra Labs AI Solutions and Web Development Company">
@@ -49,7 +48,7 @@
 <meta name="twitter:site" content="@trinetra_labs">
 <meta name="twitter:title" content="Trinetra Labs | AI & Software Solutions">
 <meta name="twitter:description" content="AI solutions, automation, UI/UX design and web development services for startups and enterprises.">
-<meta name="twitter:image" content="https://trinetra-labs.vercel.app/assets/logo.jpg">
+<meta name="twitter:image" content="https://trinetra-labs.vercel.app/assets/logo.webp">
 <meta name="twitter:image:alt" content="Trinetra Labs AI Solutions and Web Development Services">
 <meta name="twitter:url" content="https://trinetra-labs.vercel.app">
 
@@ -61,7 +60,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- CSS -->
-<link rel="stylesheet" href="style.css">
+<link rel="preload" href="/style.css" as="style">
+<link rel="stylesheet" href="/style.css">
 
 <!-- Structured Data (Organization Schema for SEO) -->
 <script type="application/ld+json">
@@ -70,11 +70,10 @@
  "@type": "Organization",
  "name": "Trinetra Labs",
  "url": "https://trinetra-labs.vercel.app",
- "logo": "https://trinetra-labs.vercel.app/assets/logo.jpg",
+ "logo": "https://trinetra-labs.vercel.app/assets/logo.webp",
  "sameAs": [
    "https://www.instagram.com/trinetra_labs",
-   "https://www.threads.com/trinetra_labs",
-   "https://twitter.com/trinetra_labs"
+   "https://www.threads.com/trinetra_labs"
  ],
  "contactPoint": {
    "@type": "ContactPoint",
@@ -92,14 +91,14 @@
     <!-- HERO SECTION -->
     <section class="hero-section">
         <!-- Background Video -->
-         <video class="hero-bg-video" autoplay muted loop playsinline preload="metadata" poster="/assets/hero-placeholder.jpg">
-            <source src="/assets/hero_section.mp4" type="video/mp4">
+         <video class="hero-bg-video" autoplay muted loop playsinline preload="metadata" poster="/assets/hero-placeholder.webp">
+            <source src="/assets/hero_section_compressed.mp4" type="video/mp4">
         </video>
 
         <!-- Navbar -->
         <nav class="hero-navbar">
             <div class="nav-left-pill">
-                <a href="#about"><img src="assets/logo.jpg" alt="Trinetra Labs Logo" class="brand-logo-img"></a>
+                <a href="#about"><img src="assets/logo.webp" alt="Trinetra Labs Logo" class="brand-logo-img"  loading="eager"></a>
                 <span class="brand-text">Trinetra Labs</span>
             </div>
 
@@ -297,7 +296,7 @@
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="script.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script defer src="script.js"></script>
 </body>
 </html>
