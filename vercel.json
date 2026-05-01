@@ -5,7 +5,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; img-src 'self' https: data: https://*.blob.vercel-storage.com; media-src 'self' https://*.blob.vercel-storage.com https:; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com https://*.blob.vercel-storage.com data:; connect-src 'self'; frame-src 'none';"
+          "value": "default-src 'self'; img-src 'self' https: data: https://*.blob.vercel-storage.com; media-src 'self' https://*.blob.vercel-storage.com https:; script-src 'self' https://cdnjs.cloudflare.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com https://*.blob.vercel-storage.com data:; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com; frame-src 'none';"
         },
         {
           "key": "X-Frame-Options",
