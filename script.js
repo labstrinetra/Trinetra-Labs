@@ -289,3 +289,4 @@ function applyDottedSurfaceFooter(containerId) {
     window.addEventListener('resize', handleResize);
     animate();
 }
+
