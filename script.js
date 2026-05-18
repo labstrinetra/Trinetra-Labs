@@ -290,3 +290,90 @@ function applyDottedSurfaceFooter(containerId) {
     animate();
 }
 
+// ==========================================================================
+// ENQUIRY MODAL FUNCTIONALITY
+// ==========================================================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const enquireBtn = document.getElementById('enquireBtn');
+    const modal = document.getElementById('enquiryModal');
+    const closeBtn = document.querySelector('.close-btn');
+    const enquiryForm = document.getElementById('enquiryForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const emailInput = document.getElementById('email');
+    const nameInput = document.getElementById('name');
+    const phoneInput = document.getElementById('phone');
+    const messageInput = document.getElementById('message');
+
+    // Open modal
+    if (enquireBtn) {
+        enquireBtn.addEventListener('click', function() {
+            modal.style.display = 'block';
+            nameInput.focus();
+        });
+    }
+
+    // Close modal when clicking X
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+    }
+
+    // Close modal when clicking outside
+    window.addEventListener('click', function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+    // Form validation and enable submit button
+    function validateForm() {
+        const nameValid = nameInput.value.trim().length >= 2;
+        const phoneValid = phoneInput.value.trim().length >= 8;
+        const emailValid = emailInput.value.trim() !== '' &&
+                          emailInput.value.trim().match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+        const messageValid = messageInput.value.trim().length >= 10;
+
+        if (nameValid && phoneValid && emailValid && messageValid) {
+            submitBtn.disabled = false;
+        } else {
+            submitBtn.disabled = true;
+        }
+    }
+
+    // Add event listeners to all form fields for validation
+    nameInput.addEventListener('input', validateForm);
+    phoneInput.addEventListener('input', validateForm);
+    emailInput.addEventListener('input', validateForm);
+    messageInput.addEventListener('input', validateForm);
+
+    // Handle form submission
+    if (enquiryForm && submitBtn) {
+        enquiryForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            if (submitBtn.disabled) return;
+
+            const name = nameInput.value.trim();
+            const phone = phoneInput.value.trim();
+            const email = emailInput.value.trim();
+            const message = messageInput.value.trim();
+
+            // Construct email link
+            const subject = encodeURIComponent('Enquiry from ' + name);
+            const body = encodeURIComponent(
+                `Name: ${name}\n\nPhone: ${phone}\n\nEmail: ${email}\n\nMessage:\n${message}`
+            );
+
+            // Open email client
+            window.location.href = `mailto:info.trinetralabs@gmail.com?subject=${subject}&body=${body}`;
+
+            // Reset and close modal
+            enquiryForm.reset();
+            submitBtn.disabled = true;
+            modal.style.display = 'none';
+        });
+    }
+});
+
